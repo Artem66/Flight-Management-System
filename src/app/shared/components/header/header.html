@@ -1,0 +1,20 @@
+<header class="navbar">
+  <div class="navbar-logo">
+    <a [routerLink]="['/']" class="navbar-logo-link">
+      FMS
+    </a>
+  </div>
+
+  <nav class="navbar-nav-links">
+    @for (item of navItems; track item.path) {
+      <a 
+        class="navbar-nav-link"
+        [routerLink]="[item.path]"
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</header>
